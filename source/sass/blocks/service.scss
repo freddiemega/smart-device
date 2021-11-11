@@ -1,0 +1,147 @@
+.service {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: $background-dark-blue;
+}
+
+.service__wrapper {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 90px;
+  padding-bottom: 127px;
+
+  @media (max-width: $tablet-width) {
+    max-width: auto;
+    width: 100%;
+    padding-left: calc(10% - 50px);
+    padding-right: calc(10% - 50px);
+    padding-top: 52px;
+    padding-bottom: 80px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-left: calc(15% - 33px);
+    padding-right: calc(15% - 33px);
+    padding-top: 50px;
+    padding-bottom: 64px;
+  }
+}
+
+.service__wrapper h2 {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  color: $basic-white;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 51px;
+
+  @media (max-width: $tablet-width) {
+    font-size: 32px;
+    line-height: 45px;
+    margin-bottom: 49px;
+    padding-right: 100px;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 28px;
+    line-height: 39px;
+    padding-right: 0;
+    padding-left: 10px;
+    margin-bottom: 42px;
+  }
+}
+
+.service__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+
+  @media (max-width: $tablet-width) {
+    grid-template-columns: 1fr;
+    grid-gap: 45px;
+  }
+
+  @media (max-width: $mobile-width) {
+    grid-gap: 30px;
+  }
+}
+
+.service__item {
+  max-width: 370px;
+  width: auto;
+
+  @media (max-width: $tablet-width) {
+    max-width: 100%;
+  }
+}
+
+.service__link {
+  position: relative;
+  display: block;
+
+  &:hover {
+    outline: 3px solid $basic-blue;
+  }
+
+  &:focus {
+    outline: 3px solid $basic-blue;
+  }
+}
+
+.service__link h3 {
+  position: absolute;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: $basic-white;
+  margin: 0;
+  padding: 0;
+  max-width: 165px;
+  top: 50px;
+  left: 44px;
+
+  @media (max-width: $tablet-width) {
+    top: 40px;
+  }
+
+  @media (max-width: $mobile-width) {
+    top: 20px;
+    left: 35px;
+  }
+}
+
+.service__link picture {
+  display: block;
+}
+
+.service__link img {
+  display: block;
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+  }
+}
+
+.service__link-block {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 63px;
+  height: 63px;
+  background-color: $basic-blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

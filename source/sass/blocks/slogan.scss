@@ -1,0 +1,240 @@
+.slogan {
+  width: 100%;
+  min-height: 760px;
+  background-color: $background-dark-blue;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: $tablet-width) {
+    min-height: 601px;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-height: 586px;
+  }
+}
+
+.slogan__wrapper {
+  max-width: 1500px;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 140px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative;
+
+  @media (max-width: $tablet-width) {
+    max-width: auto;
+    width: 100%;
+    padding-left: 90px;
+    padding-right: 0;
+    padding-top: 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-left: 0;
+  }
+}
+
+.slogan__wrapper-text {
+  width: 785px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 3;
+
+  @media (max-width: $tablet-width) {
+    width: 427px;
+    padding-top: 50px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    padding-top: 0;
+    padding-left: 17px;
+    padding-right: 17px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.slogan__wrapper-text h2 {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 3;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 94px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: $basic-white;
+  left: -5px;
+  margin-top: 58px;
+  margin-bottom: 26px;
+
+  @media (max-width: $tablet-width) {
+    font-size: 60px;
+    line-height: 70px;
+    max-width: 470px;
+    left: -2px;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 40px;
+    line-height: 47px;
+    margin-top: 5px;
+  }
+}
+
+.slogan__wrapper-text p {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 3;
+  font-family: "PT Mono", "Courier", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 34px;
+  color: $basic-white;
+  max-width: 778px;
+  padding-left: 95px;
+  margin-bottom: 43px;
+
+  @media (max-width: $tablet-width) {
+    font-size: 18px;
+    line-height: 28px;
+    padding-left: 48px;
+    margin-bottom: 54px;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 39px;
+    max-width: 360px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 66px;
+    height: 2px;
+    left: 0;
+    top: 17px;
+    background-color: $basic-white;
+
+    @media (max-width: $tablet-width) {
+      width: 33px;
+    }
+  }
+}
+
+.slogan__wrapper-button {
+  background-color: $basic-blue;
+  border: 1px solid $basic-blue;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  padding: 17px 42px;
+  position: relative;
+  z-index: 3;
+  margin-left: 95px;
+  display: inline-block;
+
+  @media (max-width: $tablet-width) {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 48px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-left: 0;
+  }
+
+  &:hover {
+    color: $basic-white;
+    background-color: transparent;
+    border: 1px solid $basic-white;
+  }
+
+  &:focus {
+    color: $basic-white;
+    background-color: transparent;
+    border: 1px solid $basic-white;
+  }
+}
+
+.slogan__button-text {
+  white-space: nowrap;
+
+  &--tablet {
+    @media (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+
+  &--mobile {
+    display: none;
+    white-space: nowrap;
+
+    @media (max-width: $mobile-width) {
+      display: block;
+    }
+  }
+}
+
+.slogan__wrapper-picture {
+  position: relative;
+  width: 705px;
+  height: 515px;
+  flex-shrink: 0;
+  z-index: 2;
+
+  @media (max-width: $tablet-width) {
+    width: 465px;
+    height: 340px;
+    top: 30px;
+    left: -8px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 301px;
+    height: 221px;
+    top: 30px;
+    left: 15px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url("../img/triangles.svg");
+    top: -140px;
+    left: -10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 671px;
+    height: 641px;
+    z-index: -1;
+
+    @media (max-width: $tablet-width) {
+      width: 528px;
+      height: 505px;
+      top: -152px;
+      left: -68px;
+    }
+
+    @media (max-width: $mobile-width) {
+      width: 505px;
+      height: 482px;
+      top: -135px;
+      left: 127px;
+    }
+  }
+}

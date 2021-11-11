@@ -1,0 +1,40 @@
+.social__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  @media (max-width: $tablet-width) {
+    justify-content: flex-end;
+  }
+}
+
+.social__item {
+  margin-right: 16px;
+
+  @media (max-width: $tablet-width) {
+    margin-right: 0;
+    margin-left: 16px;
+  }
+
+  @media (max-width: $mobile-width) {
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.social__link {
+  outline-offset: 5px;
+
+  &:hover {
+    outline: 3px solid $basic-blue;
+  }
+
+  &:focus {
+    outline: 3px solid $basic-blue;
+  }
+}
