@@ -101,9 +101,9 @@ buttonToOpenModal.addEventListener('click', function (e) {
 
 // плавный скролл к якорю
 
-var buttonToMoveAncor = document.querySelector('.slogan__wrapper-button');
+var buttonToMoveAnchor = document.querySelector('.slogan__wrapper-button');
 
-buttonToMoveAncor.addEventListener('click', function (e) {
+buttonToMoveAnchor.addEventListener('click', function (e) {
   e.preventDefault();
   document.getElementById('feedback-form').scrollIntoView({
     behavior: 'smooth',
