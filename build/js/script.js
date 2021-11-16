@@ -3,7 +3,7 @@
 // аккордеон в подвале
 
 var blockAddress = document.querySelector('.address');
-var blockAddressToggle = blockAddress.querySelector('.address__button');
+var blockAddressToggle = blockAddress.querySelector('.address__wrapper-title');
 var blockAddressInfo = blockAddress.querySelector('.address__inner');
 var svgPlus = blockAddress.querySelector('.address__button-plus');
 var svgMinus = blockAddress.querySelector('.address__button-minus');
@@ -20,6 +20,14 @@ blockAddressToggle.addEventListener('click', function () {
     svgPlus.classList.add('address__button-plus--hide');
     svgMinus.classList.remove('address__button-minus--hide');
     svgMinus.classList.add('address__button-minus--show');
+    if (blockNavInfo.classList.contains('nav-list--opened')) {
+      blockNavInfo.classList.add('nav-list--closed');
+      blockNavInfo.classList.remove('nav-list--opened');
+      svgNavPlus.classList.remove('page-footer__button-plus--hide');
+      svgNavPlus.classList.add('page-footer__button-plus--show');
+      svgNavMinus.classList.remove('page-footer__button-minus--show');
+      svgNavMinus.classList.add('page-footer__button-minus--hide');
+    }
   } else {
     blockAddressInfo.classList.add('address__inner--closed');
     blockAddressInfo.classList.remove('address__inner--opened');
@@ -31,7 +39,7 @@ blockAddressToggle.addEventListener('click', function () {
 });
 
 var blockNav = document.querySelector('.page-footer__nav');
-var blockNavToggle = blockNav.querySelector('.page-footer__nav-button');
+var blockNavToggle = blockNav.querySelector('.page-footer__nav-title');
 var blockNavInfo = blockNav.querySelector('.nav-list');
 var svgNavPlus = blockNav.querySelector('.page-footer__button-plus');
 var svgNavMinus = blockNav.querySelector('.page-footer__button-minus');
@@ -48,6 +56,14 @@ blockNavToggle.addEventListener('click', function () {
     svgNavPlus.classList.add('page-footer__button-plus--hide');
     svgNavMinus.classList.remove('page-footer__button-minus--hide');
     svgNavMinus.classList.add('page-footer__button-minus--show');
+    if (blockAddressInfo.classList.contains('address__inner--opened')) {
+      blockAddressInfo.classList.add('address__inner--closed');
+      blockAddressInfo.classList.remove('address__inner--opened');
+      svgPlus.classList.remove('address__button-plus--hide');
+      svgPlus.classList.add('address__button-plus--show');
+      svgMinus.classList.remove('address__button-minus--show');
+      svgMinus.classList.add('address__button-minus--hide');
+    }
   } else {
     blockNavInfo.classList.add('nav-list--closed');
     blockNavInfo.classList.remove('nav-list--opened');
@@ -57,6 +73,14 @@ blockNavToggle.addEventListener('click', function () {
     svgNavMinus.classList.add('page-footer__button-minus--hide');
   }
 });
+
+// установка tabindex для кнопок аккордеона в мобайл режиме
+
+if (document.documentElement.clientWidth < 768) {
+  blockNavToggle.setAttribute("tabindex", "0");
+  blockAddressToggle.setAttribute("tabindex", "0");
+;}
+
 
 // модальное окно
 
@@ -120,7 +144,23 @@ var userPhone = formInModal.querySelector('[name="user-telephone"]');
 var userMessage = formInModal.querySelector('[name="user-question"]');
 
 formInModal.addEventListener('submit', function (evt) {
-  if (!userName.value || !userPhone.value || !userMessage.value) {
+  if (!userName.value || !userPhone.value) {
+    evt.preventDefault();
+  } else {
+    localStorage.setItem('userName', userName.value);
+    localStorage.setItem('userPhone', userPhone.value);
+    localStorage.setItem('userMessage', userMessage.value);
+  }
+});
+
+var blockForm = document.querySelector('.feedback__wrapper-form');
+var formMain = blockForm.querySelector('[method="post"]');
+var userName = formMain.querySelector('[name="user-name"]');
+var userPhone = formMain.querySelector('[name="user-telephone"]');
+var userMessage = formMain.querySelector('[name="user-question"]');
+
+formMain.addEventListener('submit', function (evt) {
+  if (!userName.value || !userPhone.value) {
     evt.preventDefault();
   } else {
     localStorage.setItem('userName', userName.value);
@@ -173,4 +213,34 @@ formInModal.addEventListener('submit', function (evt) {
   input.addEventListener('focus', makePhoneMask, false);
   input.addEventListener('blur', makePhoneMask, false);
   input.addEventListener('keydown', makePhoneMask, false);
+});
+
+// Фокус внутри модального окна
+
+function isDescendant(ancestor, descendant) {
+  do {
+    if (descendant === ancestor) return true;
+  } while (descendant = descendant.parentNode);
+  return false;
+}
+
+var tabIndexRestoreFunctions;
+var lastFocused;
+
+buttonToOpenModal.addEventListener("click", function(e) {
+  lastFocused = document.activeElement;
+  var modal = document.querySelector(".modal-call");
+  tabIndexRestoreFunctions = Array.prototype
+  .filter.call(document.all, o => o.tabIndex > -1 && !isDescendant(modal, o))
+  .map(o => {
+    var oldTabIndex = o.tabIndex;
+    o.tabIndex = -1;
+    return () => o.tabIndex = oldTabIndex;
+  });
+});
+
+buttonToCloseModal.addEventListener("click", function(e) {
+  tabIndexRestoreFunctions && tabIndexRestoreFunctions.forEach(f => f());
+  tabIndexRestoreFunctions = null;
+  lastFocused && lastFocused.focus();
 });

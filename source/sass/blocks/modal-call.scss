@@ -2,7 +2,8 @@
   top: 136px;
   left: 50%;
   width: 490px;
-  min-height: 605px;
+  max-height: 605px;
+  height: calc(100vh - 136px);
   margin-left: -245px;
   padding-top: 30px;
   padding-right: 39px;
@@ -14,6 +15,10 @@
 
 .modal-call__inner {
   position: relative;
+  height: 101%;
+  //height: 350px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .modal-call__inner h2 {
@@ -68,7 +73,7 @@
   padding-right: 23px;
   padding-bottom: 14px;
   padding-left: 23px;
-  outline-offset: 5px;
+  outline-offset: -3px;
 
   &::placeholder {
     color: $basic-white;
@@ -111,7 +116,7 @@
   font-weight: 400;
   color: $basic-white;
   margin-bottom: 28px;
-  outline-offset: 5px;
+  outline-offset: -3px;
 
   &::placeholder {
     color: $basic-white;
@@ -145,20 +150,28 @@
   cursor: pointer;
   flex-shrink: 0;
   width: 100%;
-  outline-offset: 5px;
   margin-bottom: 25px;
 
   &:hover {
-    outline: 3px solid $basic-white;
+    color: $basic-blue;
+    background-color: $basic-white;
+    border: 1px solid $basic-white;
   }
 
   &:focus {
-    outline: 3px solid $basic-white;
+    color: $basic-blue;
+    background-color: $basic-white;
+    border: 1px solid $basic-white;
+  }
+
+  &:focus-visible {
+    border: 1px solid $basic-white;
+    outline: none;
   }
 
   &:active {
     color: rgba($basic-white, 0.3);
-    background-color: $basic-blue;
+    background-color: transparent;
   }
 }
 
@@ -192,7 +205,7 @@
     height: 16px;
     border: 1px solid $basic-white;
     display: block;
-    outline-offset: 5px;
+    outline-offset: -3px;
   }
 
   & + label:hover::before {
@@ -231,7 +244,7 @@
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  outline-offset: 5px;
+  outline-offset: 3px;
 
   &::before {
     content: "";

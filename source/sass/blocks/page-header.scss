@@ -1,6 +1,7 @@
 .page-header {
   background-color: $background-dark-blue;
-  min-height: 118px;
+  min-height: 120px;
+  height: 120px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -44,6 +45,7 @@
 
   @media (max-width: $tablet-width) {
     min-height: 84px;
+    height: auto;
   }
 
   @media (max-width: $mobile-width) {
@@ -56,12 +58,12 @@
   max-width: 1500px;
   padding-left: 45px;
   padding-right: 45px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 35px;
+  padding-bottom: 25px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-grow: 1;
 
   @media (max-width: $tablet-width) {
@@ -83,6 +85,13 @@
 .page-header__logo {
   flex-shrink: 0;
   z-index: 1;
+}
+
+.page-header__logo img {
+  @media (max-width: $mobile-width) {
+    width: 38px;
+    height: 38px;
+  }
 }
 
 .page-header__inner {
@@ -125,7 +134,7 @@
   margin-bottom: 10px;
   margin-left: calc(8% + 10px);
   z-index: 2;
-  outline-offset: 5px;
+  outline-offset: 3px;
 
   &:hover {
     color: $basic-blue;
@@ -169,6 +178,7 @@
 .page-header__inner-button {
   margin-left: 48px;
   z-index: 1;
+  align-self: flex-start;
 
   @media (max-width: $tablet-width) {
     display: none;

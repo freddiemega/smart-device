@@ -18,7 +18,7 @@
       <a class="page-header__logo">
         <picture>
           <source media="(max-width: 767px)" srcset="img/logo-header-mobile.svg">
-          <img src="img/logo-header-desktop.svg" alt="Smart Device - печатные платы">
+          <img src="img/logo-header-desktop.svg" alt="Smart Device - печатные платы" width="202" height="52">
         </picture>
       </a>
       <div class="page-header__inner">
@@ -220,19 +220,19 @@
           <p>Мы проконсультируем Вас бесплатно</p>
           <form action="https://echo.htmlacademy.ru" method="post">
             <label>
-              <input type="text" required="" pattern="[A-Za-zА-Яа-яЁё0-9]{1,50}" name="user-name" placeholder="Имя">
+              <input type="text" required="" name="user-name" placeholder="Имя">
             </label>
             <label>
               <input type="tel" required="" name="user-telephone" placeholder="Телефон">
             </label>
             <label class="feedback__wrapper-text">
-              <textarea required="" name="user-question" placeholder="Ваш вопрос"></textarea>
+              <textarea name="user-question" placeholder="Ваш вопрос"></textarea>
             </label>
             <div class="feedback__wrapper-checkbox">
               <input class="visually-hidden" id="user-agreement" type="checkbox" name="user-agreement" aria-label="Выберете если согласны на обработку персональных данных" required="">
               <label for="user-agreement">Я согласен на обработку персональных данных</label>
             </div>
-            <button>задать вопрос</button>
+            <button type="submit">задать вопрос</button>
           </form>
         </div>
         <div class="feedback__wrapper-picture">
@@ -261,7 +261,7 @@
                 <svg width="27" height="27" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="img/sprite_auto.svg#icon-fb"></use>
                 </svg>
-                <span class="visually-hidden">Мы в Инстаграме</span>
+                <span class="visually-hidden">Мы в Фейсбуке</span>
               </a>
             </li>
             <li class="social__item">
@@ -269,7 +269,7 @@
                 <svg width="27" height="27" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="img/sprite_auto.svg#icon-ok"></use>
                 </svg>
-                <span class="visually-hidden">Мы в Фейсбуке</span>
+                <span class="visually-hidden">Мы в Одноклассниках</span>
               </a>
             </li>
             <li class="social__item">
@@ -277,16 +277,16 @@
                 <svg width="27" height="27" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="img/sprite_auto.svg#icon-vk"></use>
                 </svg>
-                <span class="visually-hidden">Мы в Твиттер</span>
+                <span class="visually-hidden">Мы в ВК</span>
               </a>
             </li>
           </ul>
         </div>
       </div>
       <nav class="page-footer__nav">
-        <div class="page-footer__nav-title">
+        <button class="page-footer__nav-title" tabindex="-1">
           <h2>разделы сайта</h2>
-          <button class="page-footer__nav-button">
+          <div class="page-footer__nav-button">
             <span class="visually-hidden">развернуть меню разделы сайта</span>
             <svg class="page-footer__button-plus page-footer__button-plus--show page-footer__button-plus--nojs" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/sprite_auto.svg#icon-plus"></use>
@@ -294,23 +294,23 @@
             <svg class="page-footer__button-minus page-footer__button-minus--hide page-footer__button-minus--nojs" width="16" height="1" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/sprite_auto.svg#icon-minus"></use>
             </svg>
-          </button>
-        </div>
+          </div>
+        </button>
         <ul class="nav-list nav-list--closed nav-list--nojs">
           <li class="nav-list__item"><a class="nav-list__link" href="#">о компании</a></li>
-          <li class="nav-list__item"><a class="nav-list__link" href="#">комплектующие</a></li>
           <li class="nav-list__item"><a class="nav-list__link" href="#">продукты</a></li>
-          <li class="nav-list__item"><a class="nav-list__link" href="#">доставка</a></li>
           <li class="nav-list__item"><a class="nav-list__link" href="#">производство печатных плат</a></li>
-          <li class="nav-list__item"><a class="nav-list__link" href="#">контакты</a></li>
           <li class="nav-list__item"><a class="nav-list__link" href="#">монтаж печатных плат</a></li>
+          <li class="nav-list__item"><a class="nav-list__link" href="#">комплектующие</a></li>
+          <li class="nav-list__item"><a class="nav-list__link" href="#">доставка</a></li>
+          <li class="nav-list__item"><a class="nav-list__link" href="#">контакты</a></li>
         </ul>
       </nav>
       <section class="address">
         <h2 class="visually-hidden">наш адрес</h2>
-        <div class="address__wrapper-title">
+        <button class="address__wrapper-title" tabindex="-1">
           <p class="address__title">наш офис</p>
-          <button class="address__button">
+          <div class="address__button">
             <span class="visually-hidden">развернуть меню разделы сайта</span>
             <svg class="address__button-plus address__button-plus--show address__button-plus--nojs" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/sprite_auto.svg#icon-plus"></use>
@@ -318,13 +318,13 @@
             <svg class="address__button-minus address__button-minus--hide address__button-minus--nojs" width="16" height="1" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/sprite_auto.svg#icon-minus"></use>
             </svg>
-          </button>
-        </div>
+          </div>
+        </button>
         <div class="address__inner address__inner--closed address__inner--nojs">
           <p>г. Мытищи, Олимпийский проспект, д.10</p>
-          <a href="+74955894050">+7 (495) 589-40-50</a>
-          <a href="+79250038767">+7 (925) 003-87-67</a>
-          <a href="+792692608079">+7 (926) 926-080-79</a>
+          <a href="tel:+74955894050">+7 (495) 589-40-50</a>
+          <a href="tel:+79250038767">+7 (925) 003-87-67</a>
+          <a href="tel:+792692608079">+7 (926) 926-080-79</a>
         </div>
       </section>
     </div>
@@ -346,19 +346,19 @@
         </p>
         <form action="https://echo.htmlacademy.ru" method="post">
           <label>
-            <input type="text" required="" pattern="[A-Za-zА-Яа-яЁё0-9]{1,50}" name="user-name" placeholder="Имя">
+            <input type="text" required="" name="user-name" placeholder="Имя">
           </label>
           <label>
             <input type="tel" required="" name="user-telephone" placeholder="Телефон">
           </label>
           <label class="modal-call__wrapper-text">
-            <textarea required="" name="user-question" placeholder="Ваш вопрос"></textarea>
+            <textarea name="user-question" placeholder="Ваш вопрос"></textarea>
           </label>
           <div class="modal-call__wrapper-checkbox">
             <input class="visually-hidden" id="user-call-agreement" type="checkbox" name="user-call-consent" aria-label="Выберете если согласны на обработку персональных данных" required="">
             <label for="user-call-agreement">Я согласен на обработку персональных данных</label>
           </div>
-          <button>отправить</button>
+          <button type="submit">отправить</button>
         </form>
       </div>
       <button class="modal-call__button-close">закрыть</button>
