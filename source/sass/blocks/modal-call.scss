@@ -74,6 +74,7 @@
   padding-bottom: 14px;
   padding-left: 23px;
   outline-offset: -3px;
+  border-radius: 0;
 
   &::placeholder {
     color: $basic-white;
@@ -117,6 +118,7 @@
   color: $basic-white;
   margin-bottom: 28px;
   outline-offset: -3px;
+  border-radius: 0;
 
   &::placeholder {
     color: $basic-white;

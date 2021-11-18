@@ -193,6 +193,7 @@
   padding-bottom: 14px;
   padding-left: 17px;
   outline-offset: -3px;
+  border-radius: 0;
 
   @media (max-width: $tablet-width) {
     padding-top: 12px;
@@ -241,6 +242,7 @@
   color: $basic-white;
   margin-bottom: 42px;
   outline-offset: -3px;
+  border-radius: 0;
 
   @media (max-width: $tablet-width) {
     height: 159px;
